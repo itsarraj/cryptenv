@@ -1,0 +1,26 @@
+[package]
+name = "cryptenv"
+version = "0.1.0"
+edition = "2021"
+description = "Encrypted secrets in git — a sops alternative built on age"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/cryptenv"
+readme = "README.md"
+keywords = ["age", "encryption", "secrets", "dotenv", "sops"]
+categories = ["cryptography", "command-line-utilities"]
+
+[lib]
+name = "cryptenv"
+path = "src/lib.rs"
+
+[[bin]]
+name = "cryptenv"
+path = "src/main.rs"
+
+[dependencies]
+age = { version = "0.11", features = ["armor"] }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+dirs = "5"
+tempfile = "3"
